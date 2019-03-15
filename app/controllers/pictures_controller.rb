@@ -22,6 +22,23 @@ class PicturesController < ApplicationController
     end
   end
 
+  def edit
+    
+  end
+
+  def update
+    if @picture.update(picture_params)
+      redirect_to @picture, notice: "Picture updated!"
+    else
+      render 'edit'
+    end
+  end
+  
+  def destroy
+    @picture.destroy
+    redirect_to root_path
+  end
+
   private
 
   def picture_params
