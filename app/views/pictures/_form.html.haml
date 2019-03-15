@@ -1,0 +1,7 @@
+= simple_form_for @picture, html: { multipart: true } do |f|
+  .form-group
+    = f.input :title
+  .form-group
+    = f.input :description
+    
+  = f.button :submit
