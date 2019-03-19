@@ -1,0 +1,7 @@
+- if user_signed_in?
+  .navigation
+    = link_to (image_tag("home", class: "navigation__nav-icon")), root_path
+    = image_tag("search", class: "navigation__nav-icon")
+    = link_to (image_tag("photo-camera", class: "navigation__nav-icon")), new_picture_path
+    = image_tag("like", class: "navigation__nav-icon")
+    = link_to (image_tag("profile", class: "navigation__nav-icon")), edit_user_registration_path

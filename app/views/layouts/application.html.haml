@@ -1,26 +1,25 @@
 %html
-%head
-  %title InstagramOnRails
-  = csrf_meta_tags
-  = csp_meta_tag
+  %head
+    %title InstagramOnRails
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
-  = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-%body
+  %body
 
-  .container
-    - if user_signed_in?
-      %ul
-        %li= link_to "Gram it", new_picture_path
-        %li= link_to "Settings", edit_user_registration_path
-        %li= link_to "Sign out", destroy_user_session_path, method: :delete
-    - else
-      %ul
-        %li= link_to "Join", new_user_registration_path
-        %li= link_to "Log in", new_user_session_path
+    .main-container
+      .container
+        - if !user_signed_in?
+          %ul
+            %li= link_to "Join", new_user_registration_path
+            %li= link_to "Log in", new_user_session_path
 
-  .container
-    -flash.each do |name, msg|
-      =content_tag :div, msg
+      .container
+        -flash.each do |name, msg|
+          =content_tag :div, msg
+      
+      .main-container__feed
+        = yield
 
-  = yield
+      = render "components/nav"
