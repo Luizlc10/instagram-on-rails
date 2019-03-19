@@ -1,4 +1,15 @@
 = simple_form_for @picture, html: { multipart: true } do |f|
+  - if @picture.errors.any?
+    %div
+      %h2
+      = pluralize(@picture, 'error')
+      prevented this picture from %saving
+      %ul
+        - @picture.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.input :image
   .form-group
     = f.input :title
   .form-group

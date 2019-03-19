@@ -1,5 +1,9 @@
 %h1 Update %picture
 
+%strong
+  Right now
+  = image_tag @picture.image.url(:medium)
+
 = render 'form'
 
 = link_to "CANCEL", picture_path
