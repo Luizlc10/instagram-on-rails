@@ -21,9 +21,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #f1f1f1;
 }
 
 .main-container {
+  background-color: white;
   width: 450px;
   height: 100vh;
   overflow-y: scroll;
