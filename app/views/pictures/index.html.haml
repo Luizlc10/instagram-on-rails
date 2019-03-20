@@ -1,22 +1,4 @@
 - @pictures.each do |picture|
-  .container-fluid.picture
-    .row.picture__picture-header
-      .col
-        = link_to (image_tag 'user', alt: 'user', height: '40', width: '40'), root_path
-        = link_to picture.user.first_name, root_path
-        = image_tag 'more', alt: 'more', height: '20', width: '20', class: 'picture__picture-header--more'
-    .row.picture__picture-body
-      = link_to (image_tag picture.image.url, class: 'picture__picture-body--main-picture'), picture
-      .col.picture__picture-body--actions
-        = link_to (image_tag 'like', alt: 'like', height: '30', width: '30'), like_picture_path(picture), method: :put
-        = image_tag 'chat', alt: 'chat', height: '30', width: '30', class: ''
-        = image_tag 'share', alt: 'share', height: '30', width: '30', class: ''
-    .row.picture__picture-footer
-      .col
-        %p
-          = picture.get_upvotes.size
-          likes
-        %p
-          %span= picture.user.first_name
-          = picture.title
+  .container-fluid
+    = render partial: "components/picture", locals: {picture: picture}
 

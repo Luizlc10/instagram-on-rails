@@ -1,17 +1,2 @@
-= image_tag @picture.image.url
-
-%h1= @picture.title
-%p= @picture.description
-%p
-  Pick by
-  = @picture.user.email
-
-  = link_to like_picture_path(@picture), method: :put do
-    %span
-    like
-    = @picture.get_upvotes.size
-
-- if user_signed_in?
-  = link_to "BACK", root_path
-  = link_to "EDIT", edit_picture_path
-  = link_to "DELETE", picture_path, method: :delete, data: { confirm: "are you sure?" }
+.container-fluid
+  = render partial: "components/picture", locals: {picture: @picture}
