@@ -1,3 +1,43 @@
 // Place all the styles related to the Pictures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.picture {
+  &__picture-header {
+    padding: 8px;
+
+    a {
+      color: black;
+      font-weight: bold;
+    }
+
+    &--more {
+      display: block;
+      float: right;
+      margin-top: 10px;
+    }
+  }
+  &__picture-body {
+    &--main-picture {
+      width: 100%;
+    }
+    
+    &--actions {
+      margin: 0 5px;
+
+      * {
+        margin: 10px 5px;
+      }
+
+      img {
+        filter: opacity(50%)
+      }
+    }
+  }
+  &__picture-footer {
+    padding: 0 10px;
+    
+    span {
+      font-weight: bold;
+    }
+  }
+}
