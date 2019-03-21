@@ -7,7 +7,6 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-
     .main-container
       %div
         - if !user_signed_in?
@@ -15,7 +14,7 @@
             %li= link_to "Join", new_user_registration_path
             %li= link_to "Log in", new_user_session_path
 
-      %div.container-fluid
+      .container-fluid
         -flash.each do |name, msg|
           =content_tag :div, msg    
         
