@@ -2,8 +2,6 @@
 
 %strong
   Right now
-  = image_tag @picture.image.url(:medium)
+  = image_tag @picture.image.url()
 
 = render 'form'
-
-= link_to "CANCEL", picture_path

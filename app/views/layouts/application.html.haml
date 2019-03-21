@@ -20,6 +20,7 @@
           =content_tag :div, msg    
         
       .main-container__feed
+        = render "components/header"
         = yield
 
       = render "components/nav"
